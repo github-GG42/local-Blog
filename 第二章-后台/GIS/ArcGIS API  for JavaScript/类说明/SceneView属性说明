@@ -1,0 +1,100 @@
+# SceneView属性说明
+
+## `container`:
+
+## `map`:
+
+## `viewingMode`:
+
+​	**取值**:`string`类型
+
+1. `globe`:**默认值**
+
+   说明:大场景(全球视角)
+
+   例子:
+
+   ![1570630088848](D:\总结\img\1570630088848.png)
+
+2. `local`
+
+   说明:小场景(局部视角)
+
+   需要配置`clipipng`与`extent`属性
+
+   例子:
+
+   ![1570630110132](D:\总结\img\1570630110132.png)
+
+## `clippingArea`:
+
+​	**取值**:
+
+说明:场景四个端点坐标(切割范围)
+
+## `extent`:
+
+​	**取值**:
+
+说明:展示范围
+
+## `constraints`:
+
+## `camera`:
+
+​	**取值**:`对象`类型
+
+1. `fov`:**默认55**
+   说明:控制镜头广角
+
+2. `heading`:**0~360**
+   说明:与正北方向顺时针的夹角
+
+3. `position`:**一般是WGS84**
+   说明:镜头的空间位置由`xyz`三个参数组成
+
+4. `tilt`:
+
+   + 当`viewingMode`为`Global`时:**0~99**
+   + 当`viewingMode`为`Local`时:**0~180**
+
+   说明:镜头与目标的连线与垂线的夹角
+
+说明:视角设置
+
+总说明:
+
+![1570629662571](D:\总结\img\1570629662571.png)
+
+例子:
+
+![1570629881200](D:\总结\img\1570629881200.png)
+
+## `zoom`:
+
+## `SceneView`中`Symbol`的选择
+
+| 要素类型 | 可用的符号类型                |
+| -------- | ----------------------------- |
+| Point    | PointSymbol3D,LabelSymbol3D   |
+| Polyline | LineSymbol3D,LabelSymbol3D    |
+| Polygon  | PolygonSymbol3D,LabelSymbol3D |
+| Mesh     | MeshSymbol3D,LabelSymbol3D    |
+
+### `Symbol Layer`
+
+![1571057174534](D:\总结\img\1571057174534.png)
+
+| Symbol3DLayer Type   |                Symbol3D Type                | Flat/Volumetric | Size Units | Example                                         |
+| -------------------- | :-----------------------------------------: | --------------- | ---------- | ----------------------------------------------- |
+| IconSymbol3DLayer    |        PointSymbol3D,PolygonSymbol3D        | flat            | points     | ![1571057371316](D:\总结\img\1571057371316.png) |
+| ObjectSymbol3DLayer  |        PointSymbol3D,PolygonSymbol3D        | volumetric      | meters     | ![1571057576999](D:\总结\img\1571057576999.png) |
+| LineSymbol3DLayer    |        LineSymbol3D,PolygonSymbol3D         | flat            | points     | ![1571057659654](D:\总结\img\1571057659654.png) |
+| PathSymbol3DLayer    |                LineSymbol3D                 | volumetric      | meters     | ![1571057752284](D:\总结\img\1571057752284.png) |
+| FillSymbol3DLayer    |         PolygoSymbol3D,MeshSymbol3D         | flat            | -          | ![1571057866118](D:\总结\img\1571057866118.png) |
+| WaterSymbol3DLayer   |               PolygonSymbol3D               | volumetric      | -          | ![1571057942560](D:\总结\img\1571057942560.png) |
+| ExtrudeSymbol3DLayer |               PolygonSymbol3D               | volumetric      | meters     | ![1571057922161](D:\总结\img\1571057922161.png) |
+| TestSymbol3DLayer    | PointSymbol3D,PolygonSymbol3D,LabelSymbol3D | flat            | points     | ![1571058159546](D:\总结\img\1571058159546.png) |
+
+
+

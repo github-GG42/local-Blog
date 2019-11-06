@@ -1,0 +1,6 @@
+# npm 版本更新
+
+```shell
+npm update -global
+```
+
